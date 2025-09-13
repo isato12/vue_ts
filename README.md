@@ -1,2 +1,3 @@
-# vue_ts
-# vue_ts
+#Vue_ts
+
+Este es el repositorio del curso de vue con tipescript
