@@ -1,5 +1,8 @@
 //console.log("inicio");
 
+import type { Hero } from "../data/heroes"
+import { getHeroeById } from "./7-imp_exp"
+
 //new Promise ((resolve,reject) => {
   //  console.log("cuerpo de la promesa");
 //setTimeout(() => {
@@ -50,4 +53,25 @@
 //- Puedes encadenar promesas usando `.then`.
 
 
+const getHeroByIdAsync = (id:number):Promise<Hero> =>{
+  return new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      const hero =getHeroeById(id)
 
+      //forma larga de escribir el codigo
+      // if(hero){
+      //   resolve(hero)
+      // }else{
+      //   reject("No se pudo encontrar el heroe " + id)
+      // }
+      //forma mas corta de escribir el codigo
+      hero?resolve(hero):reject(`No se pudo encontrar el heroe ${id  }`)
+      
+    },1000)
+})
+}
+//
+getHeroByIdAsync(5)
+.then( hero => console.log("Heroe", hero.name))
+.catch(err => console.warn(err))
+.finally(() => console.log("Finalizo el proceso"))
