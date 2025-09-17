@@ -10,7 +10,9 @@ import viteLogo from '/vite.svg'
 //import './bases/6-deses-arr'
 //import './bases/7-imp_exp'
 // import './bases/8-promesas'
-import './bases/9-fetch_api'
+// import './bases/9-fetch_api'
+import './bases/10-axios'
+import './bases/11-async-await'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
